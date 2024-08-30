@@ -8,6 +8,7 @@ import { createContext, ReactNode } from "react";
 import { redirects } from '@wix/redirects';
 
 const refreshToken = JSON.parse(Cookies.get("refreshToken") || "{}");
+const clientId = process.env.NEXT_PUBLIC_WIX_CLIENT_ID!
 
 const wixClient = createClient({
   modules: {

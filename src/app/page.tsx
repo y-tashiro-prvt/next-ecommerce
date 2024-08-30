@@ -1,36 +1,66 @@
-"use client"
+// "use client";
 
 import CategoryList from "@/components/CategoryList"
 import ProductList from "@/components/ProductList"
 import Slider from "@/components/Slider"
-import { useContext, useEffect } from "react";
+import { Suspense, useContext, useEffect } from "react";
 import { WixClientContext } from "@/context/wixContext";
 import { useWixClient } from "@/hooks/useWixClient";
+import { wixClientServer } from "@/lib/wixClientServer";
 
 
 
-const HomePage = () => {
+
+const HomePage = async () => {
 
   // TEST (FETCHING ON THE CLIENT COMPONENT)
 
-  const wixClient = useWixClient()
+  // console.log("Client ID:", process.env.NEXT_PUBLIC_WIX_CLIENT_ID);
 
-  useEffect(() => {
-    const getProducts = async () => {
-      const res = await wixClient.products.queryProducts().find();
+  // const wixClient = useWixClient()
 
-      console.log(res)
-    };
+  // useEffect(() => {
+  //   const getProducts = async () => {
+  //     try {
+  //       const res = await wixClient.products.queryProducts().find();
+  //       console.log("API Response:", res); // レスポンスを確認
+  //     } catch (error) {
+  //       console.error("Error fetching products:", error); // エラーハンドリングを追加
+  //     }
+  //   };
 
-    getProducts();
-  }, [wixClient]);
+  //   getProducts();
+  // }, [wixClient]);
+
+    // TEST (FETCHING ON THE SERVER COMPONENT)
+
+  const wixClient = await wixClientServer();
+
+  const res = await wixClient.products.queryProducts().find();
+
+  console.log(process.env.FEATURED_PRODUCTS_CATEGORY_ID!)
+
+  console.log(res);
+  try {
+    // API呼び出し
+} catch (error) {
+    console.error(error); // エラーの詳細を表示
+}
+
+
+
   
   return (
     <div className=''>
       <Slider />
       <div className="mt-24 px-4 md:px-8 lg:px-16 xl:px-32 2xl:px-64">
         <h1 className="text-2xl">Featured Products</h1>
-        <ProductList/>
+        <Suspense fallback={"loading"}>
+          <ProductList
+            categoryId={process.env.FEATURED_PRODUCTS_CATEGORY_ID!}
+            limit={4}
+          />
+        </Suspense>
       </div>
       <div className="mt-24">
         <h1 className="text-2xl px-4 md:px-8 lg:px-16 xl:px-32 2xl:px-64 mb-12">Categories</h1>
@@ -38,7 +68,7 @@ const HomePage = () => {
       </div>
       <div className="mt-24 px-4 md:px-8 lg:px-16 xl:px-32 2xl:px-64">
         <h1 className="text-2xl">New Product</h1>
-        <ProductList/>
+        {/* <ProductList categoryId={process.env.NEW_PRODUCTS_CATEGORY_ID!} /> */}
       </div>
     </div>
   )
