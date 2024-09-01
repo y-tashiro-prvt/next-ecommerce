@@ -9,7 +9,7 @@ const Add = ({
   variantId,
   stockNumber,
 }: {
-  productId: string;
+  productId?: string;
   variantId: string;
   stockNumber: number;
 }) => {
