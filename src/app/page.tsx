@@ -34,18 +34,18 @@ const HomePage = async () => {
 
     // TEST (FETCHING ON THE SERVER COMPONENT)
 
-  const wixClient = await wixClientServer();
+//   const wixClient = await wixClientServer();
 
-  const res = await wixClient.products.queryProducts().find();
+//   const res = await wixClient.products.queryProducts().find();
 
-  console.log(process.env.FEATURED_PRODUCTS_CATEGORY_ID!)
+//   console.log(process.env.FEATURED_PRODUCTS_CATEGORY_ID!)
 
-  console.log(res);
-  try {
-    // API呼び出し
-} catch (error) {
-    console.error(error); // エラーの詳細を表示
-}
+//   console.log(res);
+//   try {
+//     // API呼び出し
+// } catch (error) {
+//     console.error(error); // エラーの詳細を表示
+// }
 
 
 
