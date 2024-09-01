@@ -8,6 +8,7 @@ import { WixClientContext } from "@/context/wixContext";
 import { useWixClient } from "@/hooks/useWixClient";
 import { wixClientServer } from "@/lib/wixClientServer";
 
+export const dynamic = 'force-dynamic';
 
 
 
