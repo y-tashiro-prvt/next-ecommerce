@@ -1,14 +1,14 @@
+// app/layout.tsx
 import type { Metadata } from "next";
-import { Inter } from "next/font/google";
 import "./globals.css";
 import Navber from "@/components/Navber";
 import Footer from "@/components/Footer";
-import { WixClientContextProvider } from "@/context/wixContext";
+import ClientOnlyProvider from "@/components/ClientOnlyProvider";
 
-const inter = Inter({ subsets: ["latin"] });
+export const dynamic = 'force-dynamic';
 
 export const metadata: Metadata = {
-  title: "Lama Dev E-Commerce Application",
+  title: "Muldoon Shop",
   description: "A complete e-commerce application with Next.js and Wix",
 };
 
@@ -18,13 +18,13 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en">
-      <body className={inter.className}>
-        <WixClientContextProvider>
+    <html lang="ja">
+      <body>
+        <ClientOnlyProvider>
           <Navber />
           {children}
           <Footer />
-        </WixClientContextProvider>
+        </ClientOnlyProvider>
       </body>
     </html>
   );

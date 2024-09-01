@@ -1,6 +1,10 @@
 import React from 'react'
 import Image from "next/image";
 import Link from "next/link";
+import FacebookIcon from '@mui/icons-material/Facebook';
+import YouTubeIcon from '@mui/icons-material/YouTube';
+import InstagramIcon from '@mui/icons-material/Instagram';
+import XIcon from '@mui/icons-material/X';
 
 
 const Footer = () => {
@@ -11,20 +15,18 @@ const Footer = () => {
         {/* LEFT */}
         <div className="w-full md:w-1/2 lg:w-1/4 flex flex-col gap-8">
           <Link href="/">
-            <div className="text-2xl tracking-wide">LAMA</div>
+            <div className="text-2xl tracking-wide">Muldoon</div>
           </Link>
           <p>
-            3252 Winding Way, Central Plaza, Willowbrook, CA 90210, United
-            States
+          The World According to Garp、1978
           </p>
-          <span className="font-semibold">hello@lama.dev</span>
+          <span className="font-semibold">muldoon@woman.no.heisa.man</span>
           <span className="font-semibold">+1 234 567 890</span>
           <div className="flex gap-6">
-            <Image src="/facebook.png" alt="" width={16} height={16} />
-            <Image src="/instagram.png" alt="" width={16} height={16} />
-            <Image src="/youtube.png" alt="" width={16} height={16} />
-            <Image src="/pinterest.png" alt="" width={16} height={16} />
-            <Image src="/x.png" alt="" width={16} height={16} />
+            <FacebookIcon/>
+            <InstagramIcon/>
+            <YouTubeIcon/>
+            <XIcon/>
           </div>
         </div>
         {/* CENTER */}
@@ -64,8 +66,8 @@ const Footer = () => {
         <div className="w-full md:w-1/2 lg:w-1/4 flex flex-col gap-8">
           <h1 className="font-medium text-lg">SUBSCRIBE</h1>
           <p>
-            Be the first to get the latest news about trends, promotions, and
-            much more!
+          Muldoonではトップス・パンツ・ワンピースなど最新トレンドアイテムをオンラインでご購入いただけます。
+          Muldoonは9084ブランドの人気アイテムを取扱うファッション通販サイトです！
           </p>
           <div className="flex">
             <input
@@ -77,8 +79,6 @@ const Footer = () => {
           </div>
           <span className="font-semibold">Secure Payments</span>
           <div className="flex justify-between">
-            <Image src="/discover.png" alt="" width={40} height={20} />
-            <Image src="/skrill.png" alt="" width={40} height={20} />
             <Image src="/paypal.png" alt="" width={40} height={20} />
             <Image src="/mastercard.png" alt="" width={40} height={20} />
             <Image src="/visa.png" alt="" width={40} height={20} />
@@ -87,15 +87,15 @@ const Footer = () => {
       </div>
       {/* BOTTOM */}
       <div className="flex flex-col md:flex-row items-center justify-between gap-8 mt-16">
-        <div className="">© 2024 Lama Shop</div>
+        <div className="">© 2024 Muldoon Shop</div>
         <div className="flex flex-col gap-8 md:flex-row">
           <div className="">
-            <span className="text-gray-500 mr-4">Language</span>
-            <span className="font-medium">United States | English</span>
+            <span className="text-gray-500 mr-4">言語</span>
+            <span className="font-medium">日本 | Japanese</span>
           </div>
           <div className="">
-            <span className="text-gray-500 mr-4">Currency</span>
-            <span className="font-medium">$ USD</span>
+            <span className="text-gray-500 mr-4">通貨</span>
+            <span className="font-medium">円 JPY</span>
           </div>
         </div>
       </div>

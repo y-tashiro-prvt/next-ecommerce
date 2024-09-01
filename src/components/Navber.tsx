@@ -4,6 +4,7 @@ import Menu from './Menu'
 import Image from 'next/image'
 import SearchBar from './SearchBar'
 import NavIcons from './NavIcons'
+import Shop2Icon from '@mui/icons-material/Shop2';
 
 const Navber = () => {
   return (
@@ -20,13 +21,8 @@ const Navber = () => {
         {/* Left */}
         <div className="w-1/3 xl:w-1/2 flex items-center gap-12">
           <Link href="" className='flex items-center gap-3 '>
-            <Image 
-            src="/logo.png"
-            alt=''
-            width={24}
-            height={24}
-            />
-            <div className="text-2xl tracking-wide">LAMA</div>
+            <Shop2Icon className='text-pink-400'/>
+            <div className="text-2xl tracking-wide">Muldoon</div>
           </Link>
           <div className="hidden xl:flex gap-4">
             <Link href="/">Homepage</Link>
